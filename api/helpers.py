@@ -105,8 +105,9 @@ def get_textgen(sentence : str) -> str:
     model = GPT2LMHeadModel.from_pretrained(output_dir)
     tokens = tokenizer.encode(sentence)
     tokens_tensor = torch.tensor([tokens])
-    tokens_tensor = tokens_tensor.to('cpu')
-    model.to('cpu')
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+    tokens_tensor = tokens_tensor.to(device)
+    model.to(device)
     with torch.no_grad():
         outputs = model(tokens_tensor)
         predictions = outputs[0]
