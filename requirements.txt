@@ -15,6 +15,7 @@ importlib-metadata==3.4.0
 jmespath==0.10.0
 joblib==1.0.0
 Markdown==3.3.3
+nltk==3.5
 numpy==1.19.5
 packaging==20.8
 pyparsing==2.4.7
@@ -28,6 +29,7 @@ sacremoses==0.0.43
 sentencepiece==0.1.95
 six==1.15.0
 sqlparse==0.4.1
+textblob==0.15.3
 tokenizers==0.9.4
 torch==1.7.1
 tqdm==4.56.0
