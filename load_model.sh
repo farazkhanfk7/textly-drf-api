@@ -27,7 +27,16 @@ curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/do
 
 cd ../../
 
+cd models/translate
+echo "Downloading Translation:"
+fileid="1nEiRZnIRXaplftW1wSbuDq79qGwhpigZ"
+filename="model.pt"
+curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}" > /dev/null
+curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
+
+cd ../../
+
 pwd
 ls
-echo "Model downloaded"
+echo "Textly : Models downloaded"
 echo "Please run Docker Container or start server"

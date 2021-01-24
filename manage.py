@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from api.translation.ml_models import Seq2Seq,EncoderLSTM,DecoderLSTM
 
 def main():
     """Run administrative tasks."""

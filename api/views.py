@@ -7,7 +7,9 @@ from .serializers import UserSerializer,TextSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from .helpers import check_grammer,check_sentiment,get_textgen,get_correct_sentence,get_grammer_gif,get_sentiment_gif
+from .helpers import (check_grammer,check_sentiment,get_textgen,get_correct_sentence,
+                        get_grammer_gif,get_sentiment_gif,get_translation,get_summary)
+from api.translation.helpers import translate_sentence
 
 # Create your views here.
 class UserViewSet(viewsets.ModelViewSet):
@@ -106,3 +108,43 @@ class SpellAPI(APIView):
                 response["Oops"] = "Please enter a sentence in POST request"
             return Response(response, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@permission_classes((permissions.AllowAny,)) # This decorator to be used with APIView
+class TranslateAPI(APIView):
+    def get(self, request):     
+        return Response("Please send German text through POST")
+
+    def post(self, request, format=None):
+        serializer = TextSerializer(data=request.data)
+        if serializer.is_valid():
+            data = serializer.data
+            response = dict()
+            try:
+                predicted_translation = get_translation(data)
+                response["translation"] = predicted_translation
+            except KeyError:
+                response["Oops"] = "Please enter a sentence in POST request"
+            return Response(response, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+@permission_classes((permissions.AllowAny,)) # This decorator to be used with APIView
+class SummaryAPI(APIView):
+    def get(self, request):     
+        return Response("Please send text through POST")
+
+    def post(self, request, format=None):
+        serializer = TextSerializer(data=request.data)
+        if serializer.is_valid():
+            data = serializer.data
+            response = dict()
+            try:
+                predicted_summary = get_summary(data)
+                response["summary"] = predicted_summary
+            except KeyError:
+                response["Oops"] = "Please enter a sentence in POST request"
+            return Response(response, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
