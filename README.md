@@ -51,17 +51,22 @@ $ docker-compose up
 
 ## API Endpoint
 
-* http://127.0.0.1:8000/gcapi/check/
-> Takes a sentence through POST request and performs Grammer-Check and sentiment analysis. 
+> http://127.0.0.1:8000/gcapi/check/
 
-* http://127.0.0.1:8000/gcapi/generate/
-> Takes a sentence through POST request and runs text-generation model to predict next words. 
+  Takes a sentence through POST request and performs Grammer-Check and sentiment analysis. 
 
-* http://127.0.0.1:8000/gcapi/spell/
-> Takes a sentence through POST request and correct spellings. 
+> http://127.0.0.1:8000/gcapi/generate/
 
-* http://127.0.0.1:8000/gcapi/summary/
-> Returns the summary of a large text entered by user.
+  Takes a sentence through POST request and runs text-generation model to predict next words. 
 
-* http://127.0.0.1:8000/gcapi/translate-german/
-> Translates German text to English
+> http://127.0.0.1:8000/gcapi/spell/
+
+  Takes a sentence through POST request and correct spellings. 
+
+> http://127.0.0.1:8000/gcapi/summary/
+
+  Returns the summary of a large text entered by user.
+
+> http://127.0.0.1:8000/gcapi/translate-german/
+
+  Translates German text to English
