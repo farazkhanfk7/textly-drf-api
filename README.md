@@ -73,7 +73,7 @@ $ docker-compose up
 
 
 
-## Contributing Guidelines
+## Contribution
 
 * You are welcome to contribute to the python package as it is still in early development phase and needs more contribution.
 * Feel free to submit PR's and open issues.
