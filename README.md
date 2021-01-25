@@ -7,7 +7,7 @@
 # Textly-DRF-API
 > An open-source API for text correction.
 
-All-in-one API for the grammar correction, spell check, sentiment analysis,Text Summary,text Generation, Neural Machine Translation (German to  English).
+All-in-one API for the grammar correction, spell check, sentiment analysis,Text Summary,Text Generation, Neural Machine Translation (German to  English).
 Textly was build with [Django-Rest-Framework](https://www.django-rest-framework.org/) and is based on Natural Language Processing. It uses many Deep Learning models like GPT2, BERT for text analysis.
 
 ## Deep Learning Models
