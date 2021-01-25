@@ -49,7 +49,7 @@ $ docker-compose build
 $ docker-compose up
 ```
 
-## API Endpoint
+## API Endpoints
 
 > http://127.0.0.1:8000/gcapi/check/
 
@@ -70,3 +70,13 @@ $ docker-compose up
 > http://127.0.0.1:8000/gcapi/translate-german/
 
   Translates German text to English
+
+
+
+## Contributing Guidelines
+
+* You are welcome to contribute to the python package as it is still in early development phase and needs more contribution.
+* Feel free to submit PR's and open issues.
+
+
+**Working on your first Pull Request?** You can learn how from this *free* series [How to Contribute to an Open Source Project on GitHub](https://egghead.io/series/how-to-contribute-to-an-open-source-project-on-github)
